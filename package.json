@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"description": "Simple image cropping module.",
 	"main": "index.js",
+	"files": ["lib/", "icons.js"],
 	"scripts": {
 		"babel": "babel -d lib src",
 		"webpack": "webpack",
