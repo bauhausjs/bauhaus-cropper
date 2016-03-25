@@ -1,14 +1,49 @@
 
-var data = {}
+var data = {
+  iw: 0,
+  ih: 0,
+  nw: 0,
+  nh: 0,
+  cw: 0,
+  ch: 0,
+  cl: 0,
+  cr: 0,
+  kw: 0,
+  kh: 0,
+  ow: 0,
+  oh: 0,
+  max: false,
+  circle: false,
+  change: false,
+  drag: {
+    x: 0,
+    y: 0,
+    lx: 0,
+    ly: 0
+  },
+  dragging: false,
+  width: 0,
+  height: 0,
+  oWidth: 0,
+  oHeight: 0,
+  zIndex: 100,
+  cb: function() {
+    console.error('bauhaus-cropper: No callback defined!')
+  },
+  div: null,
+  img: null,
+  compression: 0.85,
+  dataUrl: null
+}
 
 export function initialData(options, blob, img, dataUrl, cb, div) {
   var iw = img.width
   var ih = img.height
 
-  var height = options.height
-  var width = options.width
-  var max = options.max
-  var circle = options.circle
+  var height = options.height || ih / 4
+  var width = options.width || iw / 4
+  var max = options.max || false
+  var circle = options.circle || false
 
   if (max && max != 'false') {
     max = true
