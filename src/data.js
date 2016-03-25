@@ -42,7 +42,7 @@ export function initialData(options, blob, img, dataUrl, cb, div) {
 
   var height = options.height || Math.round(ih / 4)
   var width = options.width || Math.round(iw / 4)
-  var max = options.max || false
+  var max = options.max || true
   var circle = options.circle || false
 
   if (max && max != 'false') {
@@ -60,6 +60,14 @@ export function initialData(options, blob, img, dataUrl, cb, div) {
   var winw = window.innerWidth
   var winh = window.innerHeight
   var scale = width / height
+  if (height < 300) {
+    height = 300
+    width = height * scale
+  }
+  if (width < 300) {
+    width = 300
+    height = width / scale
+  }
   if (height > winh - 30) {
     height = winh - 30
     width = height * scale
