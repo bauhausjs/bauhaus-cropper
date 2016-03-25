@@ -2,6 +2,7 @@
 import loadImage from './loadImage.js'
 import { initialData } from './data.js'
 import overscrolling from './overscrolling.js'
+import { exit } from './events.js'
 import blackDivWrapper from './blackDivWrapper.js'
 import showCropper from './showCropper.js'
 import data from './data.js'
@@ -12,6 +13,7 @@ export default function (blob, options, cb) {
   loadImage(blob, (img, dataUrl) => {
     let err = initialData(options, blob, img, dataUrl, cb, div)
     if (err != null) {
+      exit()
       return cb(err)
     }
     showCropper(div)

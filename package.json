@@ -1,6 +1,6 @@
 {
 	"name": "bauhaus-cropper",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Simple image cropping module.",
 	"main": "index.js",
 	"files": ["lib/", "icons.js"],

@@ -92,17 +92,20 @@ export function resizeMinus2x() {
 }
 
 export function submit(evt) {
-  overscrolling(false)
-  data.div.parentNode.removeChild(data.div)
+  exit()
   var div = blackDivWrapper()
   data.div = div
   resizeAndReturn()
   return false;
 }
 
-export function cancel(evt) {
+export function exit() {
   overscrolling(false)
   data.div.parentNode.removeChild(data.div)
+}
+
+export function cancel(evt) {
+  exit()
   data.cb('CANCEL')
   return false
 }
