@@ -40,8 +40,8 @@ export function initialData(options, blob, img, dataUrl, cb, div) {
   var iw = img.width
   var ih = img.height
 
-  var height = options.height || ih / 4
-  var width = options.width || iw / 4
+  var height = options.height || Math.round(ih / 4)
+  var width = options.width || Math.round(iw / 4)
   var max = options.max || false
   var circle = options.circle || false
 
